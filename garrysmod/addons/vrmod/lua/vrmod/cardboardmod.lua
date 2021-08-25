@@ -112,11 +112,6 @@ concommand.Add( "cardboardmod_start", function( ply, cmd, args )
 	end)
 	
 	vgui.GetWorldPanel():SetSize(1024,768)
-	--local panels = vgui.GetWorldPanel():GetChildren()
-	--panels[#panels+1] = GetHUDPanel()
-	--for k,v in pairs(panels) do
-	--	v:SetPaintedManually(true)
-	--end
 	
 	local panels = {g_SpawnMenu, g_ContextMenu}
 	
@@ -133,14 +128,10 @@ concommand.Add( "cardboardmod_start", function( ply, cmd, args )
 			render.SetToneMappingScaleLinear(Vector(0.8,0.8,0.8))
 			surface.DrawTexturedRectUV(0,0,1024,768,0,0,1024/rtWidth,768/rtHeight)
 			render.SetToneMappingScaleLinear(tmp)
-			--surface.SetDrawColor(255,0,0,255)
-			--surface.DrawOutlinedRect(0,0,1024,768)
 		cam.End3D2D()
 		cam.IgnoreZ(false)
 		
 	end)
-	
-	--local screentex = render.GetScreenEffectTexture()
 	
 	hook.Add("RenderScene","cardboardmod_renderscene",function(viewOrigin, viewAngles)
 		VRMOD_SubmitSharedTexture()
@@ -149,8 +140,6 @@ concommand.Add( "cardboardmod_start", function( ply, cmd, args )
 		tracking = VRMOD_GetPoses()
 		
 		render.PushRenderTarget( rt )
-		
-		--render stereo views
 		view.angles = viewAngles
 		view.origin = viewOrigin + view.angles:Right()*-((ipd*scale)/2)
 		view.x = 0
@@ -164,8 +153,6 @@ concommand.Add( "cardboardmod_start", function( ply, cmd, args )
 		render.RenderView(view)
 		
 		render.PopRenderTarget()
-
-		--update hud texture
 		render.SetRenderTarget(rt_hud)
 		cam.Start2D()
 		render.OverrideAlphaWriteEnable(true,true)
@@ -208,6 +195,3 @@ concommand.Add( "cardboardmod_exit", function( ply, cmd, args )
 	RunConsoleCommand("viewmodel_fov", ogVMFOV)
 	vgui.GetWorldPanel():SetSize(ScrW(),ScrH())
 end )
-		
-	
-	

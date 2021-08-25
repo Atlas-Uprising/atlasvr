@@ -66,7 +66,6 @@ if CLIENT then
 				if #t.grabPoints > 0 then
 					doors[#doors+1] = t
 					ent.vrmod_door = true
-					--print(math.floor(SysTime()),"added door", ent)
 					ent:CallOnRemove("vrmod_door",function()
 						for i = 1,#doors do
 							if doors[i].ent == ent then
@@ -76,7 +75,6 @@ if CLIENT then
 						end
 						hands[1].grabEnt = nil
 						hands[2].grabEnt = nil
-						--print("door removed", ent)
 					end)
 				else
 					invalidDoors[#invalidDoors+1] = ent

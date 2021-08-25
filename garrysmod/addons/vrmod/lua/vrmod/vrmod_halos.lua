@@ -11,12 +11,11 @@ timer.Simple(0,function()
 	haloAdd_orig = halo.Add
 end)
 
-hook.Add("VRMod_Start","halos",function(ply)
+hook.Add("VRMod_Start","ATLASVR.Halos.Start",function(ply)
 	if ply ~= LocalPlayer() then return end
 	halo.Add = function(ents, color, blurX, blurY, passes, additive, ignoreZ)
 		if FrameNumber() ~= haloFrame then
 			if FrameNumber() > haloFrame + 1 then
-				--LocalPlayer():ChatPrint("installed halo hook")
 				hook.Add("PostDrawTranslucentRenderables","vrmod_halos",function(depth, sky)
 					if not haloRT then
 						haloRT = GetRenderTarget("3dhalos"..tostring(math.floor(SysTime())), g_VR.view.w, g_VR.view.h, false)
@@ -26,9 +25,7 @@ hook.Add("VRMod_Start","halos",function(ply)
 					if FrameNumber() > haloFrame+1 then
 						haloCount = 0
 						hook.Remove("PostDrawTranslucentRenderables","vrmod_halos")
-						--LocalPlayer():ChatPrint("removed halo hook")
 					end
-					--
 					render.PushRenderTarget(haloRT)
 					render.Clear(0,0,0,255, true, true)
 					render.SetStencilEnable( true )
@@ -89,7 +86,7 @@ hook.Add("VRMod_Start","halos",function(ply)
 
 end)
 
-hook.Add("VRMod_Exit","halos",function(ply)
+hook.Add("VRMod_Exit","ATLASVR.Halos.Exit",function(ply)
 	if ply ~= LocalPlayer() then return end
 	halo.Add = haloAdd_orig
 	hook.Remove("PostDrawTranslucentRenderables","vrmod_halos")

@@ -240,7 +240,6 @@ if CLIENT then
 	end
 	
 	function VRUtilClientStart()
-		print(LocalPlayer():GetNWBool("ATLASVR.CanAccess", false))
 		local canAccess = LocalPlayer():GetNWBool("ATLASVR.CanAccess", false)
 		if not canAccess then return end
 		local error = vrmod.GetStartupError()

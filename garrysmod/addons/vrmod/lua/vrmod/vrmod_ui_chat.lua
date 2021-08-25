@@ -230,6 +230,10 @@ if CLIENT then
 		end
 		addChatMessage( chatLog[#chatLog] )
 	end)
+	hook.Add("OnPlayerChat","ATLASVR.Chat.Compatibility",function(index, name, text, type)
+		chatLog[#chatLog+1] = {text}
+		addChatMessage( chatLog[#chatLog] )
+	end)
 	
 	local orig = chat.AddText
 	chat.AddText = function(...)

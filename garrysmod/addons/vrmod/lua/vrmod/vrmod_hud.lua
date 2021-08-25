@@ -112,9 +112,3 @@ hook.Add("VRMod_Exit","hud",function(ply)
 	if ply ~= LocalPlayer() then return end
 	RemoveHUD()
 end)
---]]
-
-
-
-
-

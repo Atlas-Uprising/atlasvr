@@ -1,7 +1,7 @@
 # NOTICE
 Atlas Uprising enjoys the work of other developers and without the ones who made VRMod we would not have AtlasVR. We would like to extend our Thanks to the developers and contributors who made VRMod what it is today.
 
-VRMod Developer Credit:
+### VRMod Developer Credit:
 
 [VRMod Publisher - Catse](https://steamcommunity.com/id/Catse)
 

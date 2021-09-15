@@ -104,7 +104,11 @@ local function OpenMenu()
 	return frame
 end
 
-concommand.Add( "vrmod", function( ply, cmd, args )
+concommand.Add( "atlasvr_startingmenu", function( ply, cmd, args )
+	if LocalPlayer():GetNWString("ATLASVR.SELECTEDJOB", "none") == "none" then
+        print("[ATLASVR] You need to select a class on the menu.")
+        return
+    end
 	if vgui.CursorVisible() then
 		print("vrmod: menu will open when game is unpaused")
 	end

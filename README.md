@@ -16,11 +16,4 @@ Experience Garry's Mod like never before. An experience exclusive on Atlas Upris
 
 # How to Install
 
-###### Step 1 - Download
-Download a Zip file of this release.
-
-###### Step 2 - Locate Upload
-Once Zip file has been downloaded and opened find the 'GarrysMod' folder for your Garry's Mod and drag and drop the folder 'garrysmod' into that folder.
-
-###### Step 3 - Join the server
-Now that everything is uploaded time to join the server to test.
+Follow this [Guide](https://help.atlup.gg/en/article/how-to-atlasvr-5zu9me/?bust=1632033225670#1-how-to-install).

@@ -231,10 +231,15 @@ if CLIENT then
 		addChatMessage( chatLog[#chatLog] )
 	end)
 	hook.Add("OnPlayerChat","ATLASVR.Chat.Compatibility",function(ply, text, teamChat, isDead)
+		print()
+		if not ply:IsPlayer() then
+			chatLog[#chatLog+1] = {Color(255,56,56), "[CONSOLE] ", ": ", Color(255,255,255), text}
+			addChatMessage( chatLog[#chatLog] )
+			return
+		end
 		local nearbyPlys = ents.FindInSphere(LocalPlayer():GetPos(), 500)
 		local isnearby = false
 		for k,v in pairs(nearbyPlys) do
-			print(v)
 			if v:IsPlayer() and v == ply then
 				isnearby = true
 			end

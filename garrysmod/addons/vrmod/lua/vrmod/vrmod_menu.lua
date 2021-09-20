@@ -81,10 +81,11 @@ local function OpenMenu()
 		if g_VR.active then
 			VRUtilClientExit()
 			timer.Simple(1,function()
-				VRUtilClientStart()
+				--VRUtilClientStart()
+				ATLASVR.ClientStart()
 			end)
 		else
-			VRUtilClientStart()
+			ATLASVR.ClientStart()
 		end
 	end
 	
@@ -104,9 +105,9 @@ local function OpenMenu()
 	return frame
 end
 
-concommand.Add( "atlasvr_startingmenu", function( ply, cmd, args )
+concommand.Add( "atlasvr_oldmenu", function( ply, cmd, args )
 	if LocalPlayer():GetNWString("ATLASVR.SELECTEDJOB", "none") == "none" then
-        print("[ATLASVR] You need to select a class on the menu.")
+        print("[ATLASVR] You need to select a class on the menu. atlasvr_openmenu")
         return
     end
 	if vgui.CursorVisible() then

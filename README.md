@@ -7,7 +7,7 @@ Atlas Uprising enjoys the work of other developers and without the ones who made
 
 [VRMod Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=1678408548)
 
-[VRMod Discord](https://discord.gg/c342B2P)
+~~VRMod Discord~~ Link expired
 
 Once again we would like to Thank the developers of this mod!
 
